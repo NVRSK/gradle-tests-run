@@ -1,4 +1,4 @@
-package unit;
+package com.nvrsk.unit;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package anyPackage;
+package com.nvrsk.anyPackage;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
