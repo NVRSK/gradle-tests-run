@@ -60,16 +60,16 @@ tasks.named('check') {
     dependsOn(testing.suites.integrationTest)
 }
 
+check{
+}
+
 performanceTest {
-    ignoreFailures = true
 }
 
 integrationTest {
-    ignoreFailures = true
 }
 
 test {
-    ignoreFailures = true
 }
 
 tasks.withType(Test).configureEach {

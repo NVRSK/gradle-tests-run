@@ -10,6 +10,6 @@ public class PerfTests {
 
     @Test
     void PerfTest2 (){
-        Assertions.assertTrue(true);
+        Assertions.assertTrue(false);
     }
 }
