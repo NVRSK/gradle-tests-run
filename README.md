@@ -18,3 +18,6 @@ CI, only performance tests status: [![CI (only performance tests)](https://githu
 > *gradle integrationTest*
 - To start only performance tests:
 > *gradle performanceTest*
+
+### Notes
+Some tests are failing just only for demo
