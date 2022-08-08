@@ -1,4 +1,4 @@
-name: CI
+name: CI (all tests - unit, integrated, performance)
 on:
   push:
     branches: [main]
