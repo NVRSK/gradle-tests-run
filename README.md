@@ -1,5 +1,4 @@
 # gradle-tests-run
-How to run test approach
 
 CI status: [![CI (all tests - unit, integrated, performance)](https://github.com/NVRSK/gradle-tests-run/actions/workflows/gradle.yml/badge.svg)](https://github.com/NVRSK/gradle-tests-run/actions/workflows/gradle.yml)
 
