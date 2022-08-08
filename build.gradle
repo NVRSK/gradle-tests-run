@@ -1,0 +1,77 @@
+plugins {
+    id 'java'
+    id 'jvm-test-suite'
+}
+
+group 'com.nvrsk'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+testing {
+    suites {
+        test {
+        }
+
+        integrationTest(JvmTestSuite) {
+            dependencies {
+                implementation project
+            }
+
+            targets {
+                all {
+                    testTask.configure {
+                        shouldRunAfter(test)
+                    }
+                }
+            }
+        }
+
+        performanceTest(JvmTestSuite) {
+            sources {
+                java {
+                    srcDirs = ['src/performanceTest/java']
+                }
+            }
+            dependencies {
+                implementation project
+            }
+
+            targets {
+                all {
+                    testTask.configure {
+                        shouldRunAfter(integrationTest)
+                    }
+                }
+            }
+        }
+    }
+}
+
+tasks.named('check') {
+    dependsOn(testing.suites.performanceTest)
+    dependsOn(testing.suites.integrationTest)
+}
+
+performanceTest {
+    ignoreFailures = true
+}
+
+integrationTest {
+    ignoreFailures = true
+}
+
+test {
+    ignoreFailures = true
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
