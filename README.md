@@ -11,13 +11,23 @@ CI, only performance tests status: [![CI (only performance tests)](https://githu
 
 ## How to run tests via gradle
 - To build the project, all the tests: unit, integrated, performance, will be run:
-> *gradle --continue build* 
+> *gradle  integrationTest performanceTest build --continue* 
+- To build the project, only unit tests will be run:
+> *gradle  build*
+- To build the project without any tests:
+> *gradle  build -x test*
 - To start only unit tests:
 > *gradle test*
 - To start only integrated tests:
 > *gradle integrationTest*
 - To start only performance tests:
 > *gradle performanceTest*
+- To start unit and performance tests:
+> *gradle test performanceTest --continue*
+> 
+_--continue_ flag - '_performanceTest_' task will be executed even if '_test_' task fails
+- To start unit, integrated and performance tests without building the project:
+> *gradle test integrationTest performanceTest --continue*
 
 ### Notes
 Some tests are failing just only for demo
