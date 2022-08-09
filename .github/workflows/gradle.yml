@@ -17,4 +17,4 @@ jobs:
           distribution: 'adopt'
       - uses: gradle/gradle-build-action@v2
         with:
-          arguments: --continue build
+          arguments: integrationTest performanceTest build --continue
